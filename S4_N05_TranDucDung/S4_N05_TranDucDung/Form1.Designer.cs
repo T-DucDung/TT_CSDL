@@ -31,16 +31,20 @@
             this.buttonChon = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.comboBoxMaHK = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxNamHoc = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTenLop = new System.Windows.Forms.TextBox();
-            this.comboBoxMaLop = new System.Windows.Forms.ComboBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonChon
             // 
-            this.buttonChon.Location = new System.Drawing.Point(82, 165);
+            this.buttonChon.Location = new System.Drawing.Point(79, 170);
             this.buttonChon.Name = "buttonChon";
             this.buttonChon.Size = new System.Drawing.Size(79, 31);
             this.buttonChon.TabIndex = 1;
@@ -59,6 +63,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxMaHK);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBoxNamHoc);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBoxMaLop);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBoxTenLop);
@@ -71,15 +79,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nghiệp Vụ";
             // 
-            // reportViewer1
+            // comboBoxMaHK
             // 
-            this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "S4_N05_TranDucDung.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(315, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1094, 794);
-            this.reportViewer1.TabIndex = 0;
+            this.comboBoxMaHK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaHK.FormattingEnabled = true;
+            this.comboBoxMaHK.Location = new System.Drawing.Point(98, 95);
+            this.comboBoxMaHK.Name = "comboBoxMaHK";
+            this.comboBoxMaHK.Size = new System.Drawing.Size(178, 24);
+            this.comboBoxMaHK.TabIndex = 10;
+            this.comboBoxMaHK.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaHK_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Năm Học";
+            // 
+            // textBoxNamHoc
+            // 
+            this.textBoxNamHoc.Enabled = false;
+            this.textBoxNamHoc.Location = new System.Drawing.Point(98, 128);
+            this.textBoxNamHoc.Name = "textBoxNamHoc";
+            this.textBoxNamHoc.Size = new System.Drawing.Size(179, 22);
+            this.textBoxNamHoc.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Mã Học Kỳ";
+            // 
+            // comboBoxMaLop
+            // 
+            this.comboBoxMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaLop.FormattingEnabled = true;
+            this.comboBoxMaLop.Location = new System.Drawing.Point(97, 34);
+            this.comboBoxMaLop.Name = "comboBoxMaLop";
+            this.comboBoxMaLop.Size = new System.Drawing.Size(178, 24);
+            this.comboBoxMaLop.TabIndex = 6;
+            this.comboBoxMaLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaLop_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -93,20 +137,20 @@
             // textBoxTenLop
             // 
             this.textBoxTenLop.Enabled = false;
-            this.textBoxTenLop.Location = new System.Drawing.Point(82, 67);
+            this.textBoxTenLop.Location = new System.Drawing.Point(97, 67);
             this.textBoxTenLop.Name = "textBoxTenLop";
-            this.textBoxTenLop.Size = new System.Drawing.Size(194, 22);
+            this.textBoxTenLop.Size = new System.Drawing.Size(179, 22);
             this.textBoxTenLop.TabIndex = 5;
             // 
-            // comboBoxMaLop
+            // reportViewer1
             // 
-            this.comboBoxMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMaLop.FormattingEnabled = true;
-            this.comboBoxMaLop.Location = new System.Drawing.Point(82, 34);
-            this.comboBoxMaLop.Name = "comboBoxMaLop";
-            this.comboBoxMaLop.Size = new System.Drawing.Size(193, 24);
-            this.comboBoxMaLop.TabIndex = 6;
-            this.comboBoxMaLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaLop_SelectedIndexChanged);
+            this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "S4_N05_TranDucDung.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(315, 12);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1094, 794);
+            this.reportViewer1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -115,6 +159,7 @@
             this.ClientSize = new System.Drawing.Size(1421, 812);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Nghiệp Vụ";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -132,6 +177,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxTenLop;
         private System.Windows.Forms.ComboBox comboBoxMaLop;
+        private System.Windows.Forms.ComboBox comboBoxMaHK;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxNamHoc;
+        private System.Windows.Forms.Label label4;
     }
 }
 
