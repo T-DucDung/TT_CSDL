@@ -78,19 +78,13 @@ namespace S4_N05_TranDucDung.DAL
 
             return data;
         }
-        public string ExecuteNonQuery_output(string proc, string ID)
+        public string ExecuteNonQuery_output(SqlCommand command)
         {
             string result;
             using (SqlConnection conn = new SqlConnection(str))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand();
                 command.Connection = conn;
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = proc;
-                command.Parameters.Add("@malop", SqlDbType.VarChar, 10).Value = ID;
-                command.Parameters.Add("@result", SqlDbType.NVarChar, 100).Direction = ParameterDirection.Output;
-
                 command.ExecuteNonQuery();
                 result = (string)command.Parameters["@result"].Value;
 

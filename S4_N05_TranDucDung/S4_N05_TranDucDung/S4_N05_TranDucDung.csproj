@@ -48,9 +48,6 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,18 +63,58 @@
   <ItemGroup>
     <Compile Include="BUS\Controller.cs" />
     <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DataSetBieuMau.cs">
+      <DependentUpon>DataSetBieuMau.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetBieuMau.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBieuMau.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Diem.cs" />
+    <Compile Include="DTO\GiaoVien.cs" />
     <Compile Include="DTO\HocKy.cs" />
+    <Compile Include="DTO\HocSinh.cs" />
     <Compile Include="DTO\Lop.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DTO\MonHoc.cs" />
+    <Compile Include="GUI\DanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\DanhMuc.Designer.cs">
+      <DependentUpon>DanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NghiepVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NghiepVu.Designer.cs">
+      <DependentUpon>NghiepVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\XuatReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\XuatReport.Designer.cs">
+      <DependentUpon>XuatReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="GUI\DanhMuc.resx">
+      <DependentUpon>DanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NghiepVu.resx">
+      <DependentUpon>NghiepVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\XuatReport.resx">
+      <DependentUpon>XuatReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +126,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="DataSetBieuMau.xsc">
+      <DependentUpon>DataSetBieuMau.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBieuMau.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBieuMau.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetBieuMau.xss">
+      <DependentUpon>DataSetBieuMau.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -103,6 +151,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
